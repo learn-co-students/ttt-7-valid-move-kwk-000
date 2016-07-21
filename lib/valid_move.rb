@@ -3,14 +3,14 @@ def position_taken?(board, index)
 end
 
 def between?(index)
-  index - 1 >= 0 && index - 1 <= 8
+  index >= 0 && index <= 8
 end
 
 def valid_move?(board, index)
-  if !position_taken?(board, index) || between?(index)
-    nil
-  else
+  if !position_taken?(board, index) && between?(index)
     true
+  else
+    nil
   end
 end
 
